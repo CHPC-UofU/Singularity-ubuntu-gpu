@@ -40,6 +40,7 @@ From: nvidia/cuda:8.0-cudnn7-devel-ubuntu14.04
 
   # CUDA samples for testing
   #echo CUDA_PKG_VERSION $CUDA_PKG_VERSION
+  # CUDA_PKG_VERSION is not defined in %post, or in %test, so, need to run tests outside
   #apt-get install -y cuda-samples-$CUDA_PKG_VERSION
 
 %files
@@ -47,5 +48,6 @@ From: nvidia/cuda:8.0-cudnn7-devel-ubuntu14.04
 
 %test
   # build the deviceQuery sample and run it - it should show available GPU(s)
-  cd /usr/local/cuda/samples/1_Utilities/deviceQuery
-  make; make run
+  # since CUDA_PKG_VERSION is not defined in %test, need to run this test outside
+  #cd /usr/local/cuda/samples/1_Utilities/deviceQuery
+  #make; make run
