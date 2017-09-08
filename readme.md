@@ -8,6 +8,13 @@ We are using the Singularity 2.3+ `--nv` flag to bring in the Nvidia driver stac
 
 Thanks to the `--nv` command this container should be independent from the host GPU driver version.
 
+To build the container, do the following:
+```
+ml singularity
+./build_container23.sh
+```
+(note that you will need sudo access to singularity, which all hpcapps users should have, or build on your own machine with root).
+
 To shell into the container, do:
 ```
 ml singularity
